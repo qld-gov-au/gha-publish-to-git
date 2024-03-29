@@ -126,8 +126,8 @@ if [ "$(git ls-remote --heads "${REMOTE}" "${BRANCH}"  | wc -l)" == 0 ] ; then
       echo "Created commit ${COMMIT_HASH}"
 
       if [ -z "${INPUT_DRYRUN}" ] ; then
-          echo "Pushing to ${REMOTE}:${BRANCH}"
-          git push origin "${BRANCH}" || exit 1
+          echo "Pushing to ${REMOTE}:${INPUT_BASE_BRANCH}"
+          git push origin "${INPUT_BASE_BRANCH}" || exit 1
       else
           echo "[DRY-RUN] Not pushing to ${REMOTE}:${BRANCH}"
       fi
