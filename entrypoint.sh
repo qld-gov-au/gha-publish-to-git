@@ -185,8 +185,8 @@ echo "Created commit ${COMMIT_HASH}"
 
 # Publish output variables.
 #
-echo "::set-output name=commit_hash::${COMMIT_HASH}"
-echo "::set-output name=working_directory::${WORK_DIR}"
+echo "commit_hash=${COMMIT_HASH}" >> $GITHUB_OUTPUT
+echo "working_directory=${WORK_DIR}" >> $GITHUB_OUTPUT
 
 # Push if not a dry-run.
 #
